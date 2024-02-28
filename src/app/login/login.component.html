@@ -1,0 +1,25 @@
+<div class="login-container">
+  <form class="login-form">
+  <div class="logo">
+    <img src="../../assets/File4.png" alt="Logo">
+  </div>
+    <!--<form class="login-form">-->
+     <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput type="tel" placeholder="Enter your phone number" pattern="[0-9]*">
+      <mat-error>Please enter a valid phone number (only numbers allowed).</mat-error>
+    </mat-form-field>
+    <!--<mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Enter your password">
+</mat-form-field>-->
+    <mat-form-field>
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+</mat-form-field>
+    <button mat-raised-button color="primary">Continue</button>
+  </form>
+</div>
