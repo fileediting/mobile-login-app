@@ -1,0 +1,29 @@
+<div class="dashboard-container">
+    <div class="welcome-box">
+      <p class="welcome-text">Welcome, <span class="user-name">{{ userName }}</span></p>
+      <div class="logout-button-container">
+        <button mat-raised-button color="primary" routerLink="/login">Logout</button>
+      </div>
+    </div>
+    <table class="department-table">
+      <thead>
+        <tr>
+          <th>Department Name</th>
+          <th>Seats</th>
+          <th>Counts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let department of departments; let i = index" [ngClass]="{'first-row': i === 0}">
+          <td>{{ department.name }}</td>
+          <td>
+            <div class="seat-container">
+              <span *ngFor="let seat of department.seats" [class.filled]="seat"></span>
+            </div>
+          </td>
+          <td>Filled: {{ countFilledSeats(department.seats) }}, Not Filled: {{ countNotFilledSeats(department.seats) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

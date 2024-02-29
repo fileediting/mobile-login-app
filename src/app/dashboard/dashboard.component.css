@@ -1,0 +1,82 @@
+
+.dashboard-container {
+    padding: 20px;
+    background-image: url('../../assets/peakpx.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+  }
+  
+  .welcome-box {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logout-button-container {
+    margin-left: auto; 
+  }
+
+  .welcome-text {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+  }
+
+  .user-name {
+    font-weight: bold; 
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif; 
+  }
+
+  .department-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .department-table th, .department-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .department-table th {
+    background-color: #f0f0f0; 
+    color: #333;
+  }
+  
+  .department-table tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+
+  .department-table tr.first-row td {
+    background-color: #fff;
+    color: #000; 
+  }
+   
+  .seat-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .seat-container span {
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    background-color: #ccc; 
+    display: inline-block;
+  }
+  
+  .seat-container span.filled {
+    background-color: green; 
+  }
+  
