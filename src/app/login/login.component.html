@@ -1,25 +1,22 @@
 <div class="login-container">
-  <form class="login-form">
-  <div class="logo">
-    <img src="../../assets/File4.png" alt="Logo">
-  </div>
-    <!--<form class="login-form">-->
-     <mat-form-field appearance="outline">
+  <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div class="logo">
+      <img src="../../assets/File4.png" alt="Logo">
+    </div>
+    <mat-form-field appearance="outline">
       <mat-label>Phone Number</mat-label>
-      <input matInput type="tel" placeholder="Enter your phone number" pattern="[0-9]*">
-      <mat-error>Please enter a valid phone number (only numbers allowed).</mat-error>
+      <input matInput type="tel" placeholder="Enter your phone number" pattern="[0-9]*" name="phoneNumber" ngModel required>
+      <mat-error *ngIf="loginForm.controls['phoneNumber'].invalid && (loginForm.controls['phoneNumber'].dirty || loginForm.controls['phoneNumber'].touched)">
+        <span>Enter the number only</span>
+      </mat-error>
     </mat-form-field>
-    <!--<mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="Enter your password">
-    </mat-form-field>-->
     <mat-form-field>
-    <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-</mat-form-field>
-    <button mat-raised-button color="primary" routerLink="/dashboard">Continue</button>
+      <mat-label>Enter your password</mat-label>
+      <input matInput type="{{hide ? 'password' : 'text'}}" name="password" ngModel required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Continue</button>
   </form>
 </div>

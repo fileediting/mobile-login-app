@@ -27,17 +27,16 @@ export class DashboardComponent implements OnInit {
   generateSeats(): boolean[] {
     const seats = new Array(50); 
     for (let i = 0; i < seats.length; i++) {
-      seats[i] = Math.random() < 0.5; 
+      seats[i] = Math.random() < 0.2; 
     }
     return seats;
   }
 
- 
+
   countFilledSeats(seats: boolean[]): number {
     return seats.filter(seat => seat).length;
   }
 
-  
   countNotFilledSeats(seats: boolean[]): number {
     return seats.filter(seat => !seat).length;
   }

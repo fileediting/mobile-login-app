@@ -10,7 +10,14 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   hide = true;
   constructor(private router: Router) { }
-  continueToDashboard() {
-    this.router.navigate(['dashboard']);
+  login(loginForm: any) {
+    if (loginForm.valid) {
+     
+      console.log("Form submitted successfully!");
+      this.router.navigate(['/dashboard']); 
+    } else {
+      console.log("Form is invalid!");
+    }
   }
 }
+
